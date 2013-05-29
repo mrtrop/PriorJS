@@ -91,5 +91,6 @@
 		done: function() {
 			return (this.successes + this.failures === this.imageQueue.length + this.soundQueue.length);
 		}
-	};
+	};	
+})();
 	
