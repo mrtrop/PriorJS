@@ -13,8 +13,9 @@ If you want to add resources to your download queue:
 ```javascript
 		
 		// Resources objects
-        var images = [], sounds = [],
-		res = {
+        var images = [], 
+        sounds = [],
+	res = {
             images: [], 
             sounds: [],
 			whenDone: function() { 
