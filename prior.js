@@ -17,10 +17,13 @@
 	
 	Prior.Loader.prototype = {
 		startDownload: function() {
+		
 			if(this.imageQueue.length !== 0) 
 				this.downloadImages();
-			else if(this.soundQueue.length !== 0) 
+			
+			if(this.soundQueue.length !== 0) 
 				this.downloadAudio();
+				
 			else 
 				this.doneCallback();
 			
@@ -68,13 +71,14 @@
 				}, false);
 				
 				audio.addEventListener("error", function() {
-					console.log("Failed to load image: " + path);
+					console.log("Failed to load audio: " + path);
 					self.failures += 1;
 					if(self.done()) self.doneCallback();
 				}, false);
 				
 				audio.src = path;
 				this.loadedSounds[path] = audio;
+				
 			}
 
 			return this;
